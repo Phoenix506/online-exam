@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}Index{% endblock %}
+{% block body %}
+    {% if messages %}
+        {% for message in messages %}
+            <div style="text-align: center" {% if message.tags %}
+                 class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="index-main">
+        <div class="index-jumbo">
+            <h1>
+                Təhsil sahəsi işinin idarə edilməsi
+            </h1>
+            <h6>Siz onlayn olaraq bizim xidmətlərimizdən yararlana bilərsiniz</h6>
+        </div>
+        <div class="index-right">
+            <div class="right-box">
+                <h5>İmtahan</h5>
+                <p>Onlayn şəkildə imtahanlarda iştirak edin</p>
+            </div>
+            <div class="right-box">
+                <h5>Sınaq</h5>
+                <p>Onlayn şəkildə sınaqlarda iştirak edin</p>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
