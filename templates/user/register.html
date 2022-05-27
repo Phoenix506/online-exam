@@ -5,10 +5,22 @@
 {% block body %}
     <div class="account-page">
         <form method="POST" class="orta" style="flex-direction: column!important;">
-            <h3>Sistemə giriş edin</h3>
+            <h2>Qeydiyyatdan keçin</h2>
             <div class="orta">
                 {% csrf_token %}
-                {{ register_form|crispy }}
+                <div class="reg-box">
+                    {{ register_form.email|as_crispy_field }}
+                    {{ register_form.name|as_crispy_field }}
+                </div>
+                <div class="reg-box">
+                    {{ register_form.surname|as_crispy_field }}
+                    {{ register_form.group|as_crispy_field }}
+                </div>
+                <div class="reg-box">
+                    {{ register_form.password1|as_crispy_field }}
+                    {{ register_form.password2|as_crispy_field }}
+                </div>
+
                 {% if login_form.non_fields_errors %}
                     {% for err in login_form.non_fields_errors %}
                         <p style="color:red;margin-top: 40px !important;">{{ err }}</p>

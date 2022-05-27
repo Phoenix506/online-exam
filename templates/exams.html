@@ -1,10 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+{% load static %}
+{% block body %}
+    <div class="all-announce">
+        <div class="sales-boxes">
+            <div class="card sales-box" style="width: 250px;height: 250px">
+                <div class="sales-icon">
+                    <img src="" alt="">
+
+                </div>
+                <h5 style="width: 100%; text-align: center; padding: 30px 0 30px 0">
+                   İnformasiya təhlükəsizliyinin əsasları üzrə imtahan
+                </h5>
+
+                <a class="btn btn-primary" href="{% url 'take_exam'%}">
+                    İştirak et
+                </a>
+            </div>
+            <div class="card sales-box" style="width: 250px;height: 250px">
+                <div class="sales-icon">
+                    <img src="" alt="">
+
+                </div>
+                <h5 style="width: 100%; text-align: center; padding: 30px 0 30px 0">
+                   Korporativ informasiya sistemləri üzrə imtahan
+                </h5>
+
+                <a class="btn btn-primary" href="{% url 'take_exam'%}">
+                    İştirak et
+                </a>
+            </div>
+            <div class="card sales-box" style="width: 250px;height: 250px">
+                <div class="sales-icon">
+                    <img src="" alt="">
+
+                </div>
+                <h5 style="width: 100%; text-align: center; padding: 30px 0 30px 0">
+                    Verilənlər bazası üzrə imtahan
+                </h5>
+
+                <a class="btn btn-primary" href="{% url 'take_exam'%}">
+                    İştirak et
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+{% endblock %}

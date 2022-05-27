@@ -1,10 +1,39 @@
+{% load static %}
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Taking Exam</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/minify.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/stil.css' %}">
 </head>
-<body>
-$END$
+<body class="texam-main">
+<div>
+    <h2 class="question" style="width: 80%;margin: 0 auto;">
+        Lorem ipsum sit dolor lorem sit ipsum dolor ?
+    </h2>
+    <div class="choices-container margin-exam" style="width: 80%;margin: 0 auto;">
+        <button class="choice-container choice-btn">
+            <p class="choice-prefix">A</p>
+            <p class="choice-text" data-number="1">Lorem ipsum sit dolor</p>
+        </button>
+        <button class="choice-container choice-btn">
+            <p class="choice-prefix">B</p>
+            <p class="choice-text" data-number="2">Lorem ipsum sit dolor</p>
+        </button>
+        <button class="choice-container choice-btn">
+            <p class="choice-prefix">C</p>
+            <p class="choice-text" data-number="3">Lorem ipsum sit dolor</p>
+        </button>
+        <button class="choice-container choice-btn">
+            <p class="choice-prefix">D</p>
+            <p class="choice-text" data-number="4">Lorem ipsum sit dolor</p>
+        </button>
+    </div>
+</div>
+<button class="exam-btn btn btn-primary" type="submit">Növbəti sual</button>
 </body>
 </html>

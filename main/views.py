@@ -18,3 +18,5 @@ def account_page(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+
