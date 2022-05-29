@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Profile{% endblock %}
+
+{% block body %}
+    <div class="d-flex">
+        <aside class="account-side">
+            <a href="{% url 'profile' %}">Profilim</a>
+            <a href="{% url 'result_exams' %}">İmtahanlarım</a>
+            <a href="{% url 'result_tests' %}">Sınaqlarım</a>
+            <a href="{% url 'logout' %}">Çıxış</a>
+        </aside>
+        <div style="width: 100%;">
+            <table class="table profile-table">
+                <thead class="table-head">
+                <tr>
+                    <th>Ad Soyadınız</th>
+                    <th>Qrupunuz</th>
+                    <th>Fənn</th>
+                    <th>Sual sayı</th>
+                    <th>Yanlış cavablar</th>
+                    <th>Düzgün cavablar</th>
+                    <th>Yekun balınız</th>
+                </tr>
+                </thead>
+                <tbody class="table-body">
+                <tr>
+                    <td>{{ request.user.name }} {{ request.user.surname }}</td>
+                    <td>{{ request.user.group }} </td>
+                    <td>Verilənlər bazası</td>
+                    <td>10</td>
+                    <td>3</td>
+                    <td>7</td>
+                    <td style="color:#0ebb0e;">71</td>
+                </tr>
+                <tr>
+                    <td>{{ request.user.name }} {{ request.user.surname }}</td>
+                    <td>{{ request.user.group }} </td>
+                    <td>İnformasiya təhlükəsizliyində süni intellekt</td>
+                    <td>10</td>
+                    <td>3</td>
+                    <td>7</td>
+                    <td style="color:red;">49</td>
+                </tr>
+                <tr>
+                    <td>{{ request.user.name }} {{ request.user.surname }}</td>
+                    <td>{{ request.user.group }} </td>
+                    <td>Korporativ informasiya sistemləri</td>
+                    <td>10</td>
+                    <td>3</td>
+                    <td>7</td>
+                    <td style="color: red">34</td>
+
+                </tr>
+                <tr>
+                    <td>{{ request.user.name }} {{ request.user.surname }}</td>
+                    <td>{{ request.user.group }} </td>
+                    <td>İnformasiya təhlükəsizliyinin əsasları</td>
+                    <td>10</td>
+                    <td>3</td>
+                    <td>7</td>
+                    <td style="color: #0ebb0e">91</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

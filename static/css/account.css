@@ -1,0 +1,32 @@
+.account-side {
+    width: 200px;
+    height: 100vh;
+    background: #0275D8;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.account-side a:hover {
+    box-shadow: 0 0.4rem 1.4rem 0 rgb(86 185 235 / 50%);
+}
+
+.account-side a {
+    color: white;
+    padding: 15px;
+    border-bottom: 1px solid #0b51c5;
+    width: 100%;
+}
+
+.profile-table {
+    width: 90%;
+    margin: 90px auto;
+}
+.table-head{
+    background: black;
+    color: white;
+}
+.table-body tr:nth-child(even){
+    background: #bab8b8;
+}

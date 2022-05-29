@@ -3,6 +3,7 @@
 @import "about.css";
 @import "contactus.css";
 @import "texam.css";
+@import "account.css";
 
 * {
     margin: 0;
@@ -119,7 +120,7 @@
     border: 1px solid #f3f3f3;
     padding: 20px;
     border-radius: 5px;
-    font-size: 10px;
+    font-size: 16px;
     text-align: center;
     height: 24px;
 }

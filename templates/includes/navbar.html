@@ -7,30 +7,42 @@
     </div>
     <ul class="d-flex header-menu">
         <li><a class="header-panel" href="{% url 'index' %}">ANA SƏHİFƏ</a></li>
-        <li><a class="header-panel header-active" href="{% url 'login' %}">ŞƏXSİ KABİNET</a></li>
-        <li class="dropdown"><a class="header-panel" href="">XİDMƏTLƏR <img src="{% static 'img/arrow-down.png  ' %}" alt=""> </a>
+        <li><a class="header-panel header-active" href="{% url 'profile' %}">ŞƏXSİ KABİNET</a></li>
+        <li class="dropdown"><a class="header-panel" href="">XİDMƏTLƏR <img src="{% static 'img/arrow-down.png  ' %}"
+                                                                            alt=""> </a>
             <ul class="closed">
-                <li>İmtahan</li>
-                <li>Sınaq</li>
+                <li><a href="{% url 'exams-index' %}">İmtahan</a></li>
+                <li><a href="{% url 'exams-index' %}">Sınaq</a></li>
             </ul>
         </li>
         <li><a class="header-panel" href="/about/">HAQQIMIZDA</a></li>
         <li><a class="header-panel" href="/contact/">ƏLAQƏ</a></li>
     </ul>
-    <div class="index-buttons">
-        <button class="btn btn-light" type="submit"><a  href="{% url 'login' %}">Giriş</a></button>
-        <button class="btn btn-danger" type="submit"><a  style="color: white" href="{% url 'register' %}">Qeydiyyatdan keçin</a></button>
-    </div>
-</div>
-    {% block script %}
-        <script>
-            let buttons = document.querySelectorAll('.header-panel');
 
-            buttons.forEach(button => {
-                button.addEventListener('click', function () {
-                    buttons.forEach(btn => btn.classList.remove('.header-active'));
-                    this.classList.add('.header-active')
-                })
-            });
-        </script>
-    {% endblock %}
+    {% if request.user.is_authenticated %}
+        <div class="index-buttons">
+            <button class="btn btn-danger" type="submit"><a style="color: white;" href="{% url 'logout' %}">Çıxış</a>
+            </button>
+        </div>
+
+    {% else %}
+        <div class="index-buttons">
+            <button class="btn btn-light" type="submit"><a href="{% url 'login' %}">Giriş</a></button>
+            <button class="btn btn-danger" type="submit"><a style="color: white" href="{% url 'register' %}">Qeydiyyatdan
+                keçin</a></button>
+        </div>
+    {% endif %}
+
+</div>
+{% block script %}
+    <script>
+        let buttons = document.querySelectorAll('.header-panel');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', function () {
+                buttons.forEach(btn => btn.classList.remove('.header-active'));
+                this.classList.add('.header-active')
+            })
+        });
+    </script>
+{% endblock %}

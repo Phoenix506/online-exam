@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}Şəxsi kabinet{% endblock %}
+{% block body %}
+
+    <aside class="account-side">
+        <a href="{% url 'profile' %}">Profilim</a>
+        <a href="#">İmtahanlarım</a>
+        <a href="#">Sınaqlarım</a>
+        <a href="{% url 'logout' %}">Çıxış</a>
+    </aside>
+{% endblock %}

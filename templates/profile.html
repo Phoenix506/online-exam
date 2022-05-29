@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Profile{% endblock %}
+
+{% block body %}
+    <div class="d-flex">
+        <aside class="account-side">
+            <a href="{% url 'profile' %}">Profilim</a>
+            <a href="{% url 'result_exams' %}">İmtahanlarım</a>
+            <a href="{% url 'result_tests' %}">Sınaqlarım</a>
+            <a href="{% url 'logout' %}">Çıxış</a>
+        </aside>
+        <div class="content-section mx-5">
+            <div class="media">
+                <div class="media-body">
+                    <h2 class="account-heading">{{ user.first_name }}</h2>
+                </div>
+            </div>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4" style="font-size: 35px; font-weight: 500">Hesab məlumatları</legend>
+                    {{ u_form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">Yenilə</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

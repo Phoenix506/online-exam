@@ -9,3 +9,4 @@ def exams_page(request):
 
 def take_exam(request):
     return render(request, 'take_exam.html')
+

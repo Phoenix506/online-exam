@@ -30,3 +30,14 @@ class UserLoginForm(forms.ModelForm):
 
             if not authenticate(email=email, password=password):
                 raise forms.ValidationError("Email və ya şifrə səhvdir")
+
+
+class UserUpdateForm(forms.ModelForm):
+    username = forms.CharField(label=("İstifadəçi adınız"))
+    first_name = forms.CharField(label=("Adınız"))
+    last_name = forms.CharField(label=("Soyadınız"))
+    group = forms.CharField(label=("Qrupunuz"))
+
+    class Meta:
+        model = NewUser
+        fields = ['username', 'first_name', 'last_name', 'group']
